@@ -2396,7 +2396,10 @@ public class BluetoothMapContent {
 
         /* Enable this if post sorting and segmenting needed */
         bmList.sort();
-        bmList.segment(ap.getMaxListCount(), ap.getStartOffset());
+        //Handle OFFSET and MAXLISTCOUNT from DB query
+        if (smsSelected (fi, ap) && mmsSelected(fi, ap) ) {
+            bmList.segment(ap.getMaxListCount(), ap.getStartOffset());
+        }
 
         return bmList;
     }
