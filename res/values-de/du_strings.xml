@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://android.googlesource.com/platform/packages/apps/Bluetooth/+/406cca450c687811b305e6a9d5990490c6382227/res/values-de/strings.xml
+     German translation for Dirty Unicorns
+ -->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <plurals name="noti_caption_unsuccessful">
+        <item quantity="one"><xliff:g id="unsuccessful_number">%1$d</xliff:g> Element erfolglos</item>
+        <item quantity="other"><xliff:g id="unsuccessful_number">%1$d</xliff:g> Elemente erfolglos</item>
+    </plurals>
+    <plurals name="noti_caption_success">
+        <item quantity="one"><xliff:g id="successful_number">%1$d</xliff:g> Element erfolgreich, %2$s</item>
+        <item quantity="other"><xliff:g id="successful_number">%1$d</xliff:g> Elemente erfolgreich, %2$s</item>
+    </plurals>
+
+</resources>
