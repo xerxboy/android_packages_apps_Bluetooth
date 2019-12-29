@@ -32,6 +32,7 @@
 
 package com.android.bluetooth.opp;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.bluetooth.BluetoothAdapter;
@@ -90,6 +91,11 @@ public class BluetoothOppTransferHistory extends Activity
         mListView.setEmptyView(findViewById(R.id.empty));
 
         mShowAllIncoming = getIntent().getBooleanExtra(Constants.EXTRA_SHOW_ALL_FILES, false);
+
+        ActionBar actionBar = getActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
         String direction;
         int dir = getIntent().getIntExtra("direction", 0);
@@ -167,11 +173,18 @@ public class BluetoothOppTransferHistory extends Activity
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case android.R.id.home:
+                goUpToTopLevelSetting(this);
+                return true;
             case R.id.transfer_menu_clear_all:
                 promptClearList();
                 return true;
         }
         return false;
+    }
+
+    public static void goUpToTopLevelSetting(Activity activity) {
+        activity.finish();
     }
 
     @Override
@@ -342,3 +355,4 @@ public class BluetoothOppTransferHistory extends Activity
         }
     }
 }
+
